@@ -38,8 +38,8 @@ void AnalizadorNoSQL::analizarInsertField(std::istringstream& flujo) {
 }
 
 void AnalizadorNoSQL::analizarGetField(std::istringstream& flujo) {
-    std::string comando, id_document, field_key;
-    flujo >> comando >> id_document >> field_key;
+    std::string id_document, field_key;
+    flujo >> id_document >> field_key;
 
     id_document = clean(id_document);
     field_key = clean(field_key);
@@ -50,8 +50,8 @@ void AnalizadorNoSQL::analizarGetField(std::istringstream& flujo) {
 void AnalizadorNoSQL::analizarUpdateField(std::istringstream& flujo) {}
 
 void AnalizadorNoSQL::analizarDeleteField(std::istringstream& flujo) {
-    std::string comando, id_document, field_key;
-    flujo >> comando >> id_document >> field_key;
+    std::string id_document, field_key;
+    flujo >> id_document >> field_key;
 
     id_document = clean(id_document);
     field_key = clean(field_key);
