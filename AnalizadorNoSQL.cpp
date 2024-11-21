@@ -61,9 +61,20 @@ void AnalizadorNoSQL::analizarDeleteField(std::istringstream& flujo) {
     std::cout << "Campo '" << field_key << "' del documento '" << id_document << "' eliminado.\n";
 }
 
-void AnalizadorNoSQL::analizarListDocument(std::istringstream& flujo) {}
+void AnalizadorNoSQL::analizarListDocument(std::istringstream& flujo) {
 
-void AnalizadorNoSQL::analizarListAll(std::istringstream& flujo) {}
+    std::string id_document;
+    flujo >> id_document;
+
+    id_document = clean(id_document);
+
+    motor.listDocument(id_document);
+}
+
+void AnalizadorNoSQL::analizarListAll(std::istringstream& flujo) {
+
+    motor.listAll();
+}
 
 
 
