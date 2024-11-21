@@ -38,8 +38,8 @@ void AnalizadorNoSQL::analizarInsertField(std::istringstream& flujo) {
 }
 
 void AnalizadorNoSQL::analizarGetField(std::istringstream& flujo) {
-    std::string comando, id_document, field_key;
-    flujo >> comando >> id_document >> field_key;
+    std::string id_document, field_key;
+    flujo >> id_document >> field_key;
 
     id_document = clean(id_document);
     field_key = clean(field_key);
@@ -47,7 +47,18 @@ void AnalizadorNoSQL::analizarGetField(std::istringstream& flujo) {
     motor.getField(id_document, field_key);
 }
 
-void AnalizadorNoSQL::analizarUpdateField(std::istringstream& flujo) {}
+void AnalizadorNoSQL::analizarUpdateField(std::istringstream& flujo) {
+    std::string id_document, field_key, new_value;
+
+    flujo >> id_document >> field_key;
+    std::getline(flujo, new_value);
+
+    id_document = clean(id_document);
+    field_key = clean(field_key);
+    new_value = clean(new_value);
+
+    motor.updateField(id_document, field_key, new_value);
+}
 
 void AnalizadorNoSQL::analizarDeleteField(std::istringstream& flujo) {
     std::string comando, id_document, field_key;
