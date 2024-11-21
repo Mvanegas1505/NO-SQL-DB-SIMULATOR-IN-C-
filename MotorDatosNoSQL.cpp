@@ -9,7 +9,7 @@ void MotorDatosNoSQL::insertField(const std::string& id_document, const std::str
         return;
     }
       document[field_key] = field_value;
-      std::cout << "Inserts in field" << field_key << " value " << field_value << " into document " << id_document << std::endl;
+      std::cout << "Inserts in field " << field_key << " value " << field_value << " into document " << id_document << std::endl;
     
 }
 

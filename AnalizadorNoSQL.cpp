@@ -27,11 +27,8 @@ void AnalizadorNoSQL::analizar(const std::string& comando){
 }
 
 void AnalizadorNoSQL::analizarInsertField(std::istringstream& flujo) {
-    std::string comando, id_document, field_key, field_value;
-    flujo >> comando >> id_document >> field_key >> field_value;
-
-    std::getline(flujo, field_value);
-
+    std::string id_document, field_key, field_value;
+    flujo >> id_document >> field_key >> field_value;
 
     id_document = clean(id_document);
     field_key = clean(field_key);
@@ -65,7 +62,7 @@ void AnalizadorNoSQL::analizarListAll(std::istringstream& flujo) {}
 
 
 std::string AnalizadorNoSQL::clean(const std::string& cadena) {
-    if (cadena.front() == '"' && cadena.back() == '"') {
+    if (!cadena.empty() && cadena.front() == '"' && cadena.back() == '"') {
         return cadena.substr(1, cadena.size() - 2);
     }
     return cadena;
