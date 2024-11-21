@@ -44,7 +44,7 @@ void MotorDatosNoSQL::deleteField(const std::string& id_document, const std::str
 
     if (doc_it != tablaDocumentos.end()) {
         if (doc_it->second.erase(field_key)) {
-            std::cout << "Campo eliminado del documento." << std::endl;
+            std::cout << "Eliminando campo del documento..." << std::endl;
         } else {
             std::cout << "Error: El campo no existe en el documento." << std::endl;
         }
