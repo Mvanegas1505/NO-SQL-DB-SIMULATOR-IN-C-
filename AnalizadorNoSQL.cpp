@@ -16,12 +16,12 @@ void AnalizadorNoSQL::analizar(const std::string& comando){
     std::transform(keyword.begin(), keyword.end(), keyword.begin(), ::tolower);
 
     // Ejecuta la acción correspondiente según la palabra clave
-    if (keyword == "INSERT_FIELD") analizarInsertField(flujo);
-    else if (keyword == "UPDATE_FIELD") analizarUpdateField(flujo);
-    else if (keyword == "GET_FIELD") analizarGetField(flujo);
-    else if (keyword == "DELETE_FIELD") analizarDeleteField(flujo);
-    else if (keyword == "LIST_DOCUMENT") analizarListDocument(flujo);
-    else if (keyword == "LIST_ALL") analizarListAll(flujo);
+    if (keyword == "insert_field") analizarInsertField(flujo);
+    else if (keyword == "update_field") analizarUpdateField(flujo);
+    else if (keyword == "get_field") analizarGetField(flujo);
+    else if (keyword == "delete_field") analizarDeleteField(flujo);
+    else if (keyword == "list_document") analizarListDocument(flujo);
+    else if (keyword == "list_all") analizarListAll(flujo);
     else std::cout << "Comando no reconocido\n";
 
 }
@@ -49,6 +49,14 @@ void AnalizadorNoSQL::analizarGetField(std::istringstream& flujo) {
 
     motor.getField(id_document, field_key);
 }
+
+void AnalizadorNoSQL::analizarUpdateField(std::istringstream& flujo) {}
+
+void AnalizadorNoSQL::analizarDeleteField(std::istringstream& flujo) {}
+
+void AnalizadorNoSQL::analizarListDocument(std::istringstream& flujo) {}
+
+void AnalizadorNoSQL::analizarListAll(std::istringstream& flujo) {}
 
 
 
