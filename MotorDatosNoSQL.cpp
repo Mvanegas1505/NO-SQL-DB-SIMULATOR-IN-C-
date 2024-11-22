@@ -11,10 +11,9 @@ void MotorDatosNoSQL::insertField(const std::string& id_document, const std::str
         std::cout << "Error: El campo ya existe en el documento." << std::endl;
         return; // Termina si el campo ya existe
     }
-
-    // Inserta el campo y su valor en el documento
-    document[field_key] = field_value;
-    std::cout << "Inserts in field " << field_key << " value " << field_value << " into document " << id_document << std::endl;
+      document[field_key] = field_value;
+      std::cout << "Inserts in field " << field_key << " value " << field_value << " into document " << id_document << std::endl;
+    
 }
 
 // Función para actualizar el valor de un campo en un documento
