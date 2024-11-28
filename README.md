@@ -116,6 +116,14 @@ int main() {
    ./NoSQLSimulator
    ```
 
-## Contributions  
+## Contributors 
 Feel free to fork the repository and submit pull requests for improvements or additional features!  
-  
+  This project was possible with the contributions of the following team members:
+Project developed by:
+- **[Juan Pablo Corena Alvarez]**
+- **[Pablo Cabrejos Múnera]** 
+- **[Nicolas Saldarriaga ]**
+- **[Esteban Jacob Romero]**
+- **[Martin Vanegas Ospina]**
+
+Thank you for your hard work and collaboration!
